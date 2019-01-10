@@ -1,0 +1,88 @@
+$colors:(
+   primary:#e84393,
+   accent:#a29bfe,
+   font:#2d3436
+);
+
+$sizes:(
+  fontzero:20px,
+  fontone:10px
+);
+
+
+$font:(
+  fonttwo:20px,
+  fontthree:10px
+);
+
+@function font($fontName){
+  @return map-get($map:$fonts,$key:$fontName)
+}
+
+@function size($sizeName){
+  @return map-get($map:$sizes,$key:$sizeName)
+}
+
+@function color($colorName){
+  @return map-get($map:$colors,$key:$colorName)
+}
+body,html{
+  height:100%;
+}
+
+body{
+  margin:0;
+  .container{
+    clip-path: polygon(50% 0%, 98% 17%, 100% 60%, 83% 100%, 0 100%, 0% 60%, 0 1%);
+    background-color: color(primary);
+    height:100%;
+    width: 100%;
+    position:absolute;
+    z-index: -1;
+  }
+  header{
+    a{
+      color:color(font);
+      text-decoration:none;
+      font-size: 1.5rem;
+      text-align: center;
+      padding:14px;
+      display:block;
+    }
+  }
+  main{
+    section#mainimage{
+        background: color(accent);
+        color:#fff;
+        margin: 1em auto;
+        width:80%;
+        padding:20px;
+        display:block;
+        border-radius: 5px;
+        p {
+           padding: 0;
+           margin:0;
+           margin-bottom: -15px;
+           text-decoration: none;
+           text-align: center;
+           text-transform: uppercase;
+        }
+    }
+    section#mainimage2{
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      h3{
+        text-align: center;
+        text-transform: inherit;
+        background-color:color(accent);
+        margin:20px;
+        padding:12px;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+    }
+  }
+}
